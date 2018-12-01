@@ -6,7 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements = [];
+  serverElements = [{
+    type: 'server',
+    name: 'teset',
+    content: 'just a test'
+  }];
 
 
 }
