@@ -20,6 +20,10 @@ export class AppComponent {
       })
   }
 
+  onChangeFirst(){
+    this.serverElements[0].name = "changed";
+  }
+
   onBluePrintCreated(serverData: { serverName: string, serverContent: string }){
     this.serverElements.push({
       type: 'blueprint',
