@@ -24,6 +24,9 @@ export class AppComponent {
     this.serverElements[0].name = "changed";
   }
 
+  onDestroyFirst(){
+    this.serverElements.splice(0, 1);
+  }
   onBluePrintCreated(serverData: { serverName: string, serverContent: string }){
     this.serverElements.push({
       type: 'blueprint',
