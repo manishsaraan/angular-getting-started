@@ -1,8 +1,8 @@
 import { Component, Input, OnInit,
-   ViewEncapsulation,AfterContentInit,
+   ViewEncapsulation,
     OnChanges, SimpleChanges, DoCheck,
-     AfterContentInit, AfterContentChecked, 
-     AfterViewInit, AfterViewChecked, OnDestroy } from '@angular/core';
+     AfterContentInit, AfterContentChecked,
+     AfterViewInit, AfterViewChecked, OnDestroy, ViewChild, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -19,6 +19,7 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestro
   };
 
   @Input() name:string;
+  @ViewChild("heading") header: ElementRef;
 
   constructor() { 
     console.log("constructor called");
@@ -32,6 +33,7 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestro
 
   ngOnInit() {
     console.log("ngOnInit called");
+    console.log("Text Content",this.header.nativeElement.textConent);
   }
 
   ngDoCheck(){
@@ -48,6 +50,8 @@ AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestro
 
   ngAfterViewInit(){
     console.log("AfterViewInit called")
+    console.log("Text Content",this.header.nativeElement.textConent);
+
   }
 
   ngAfterViewChecked(){
