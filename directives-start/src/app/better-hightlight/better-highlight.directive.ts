@@ -6,7 +6,7 @@ import { MockNgModuleResolver } from '@angular/compiler/testing';
 })
 export class BetterHighlightDirective implements OnInit {
   @Input() defaultColor: string = 'transparent';
-  @Input() hightlightColor: string = 'blue';
+  @Input() appBetterHighlight: string = 'blue';
   @HostBinding('style.backgroundColor') backgroundColor: string = this.defaultColor;
   constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
@@ -17,7 +17,7 @@ export class BetterHighlightDirective implements OnInit {
 
   @HostListener('mouseenter') mouseover(eventData: Event) {
     // this.renderer.setStyle(this.elRef.nativeElement, 'background-color', 'blue');
-    this.backgroundColor = this.hightlightColor;
+    this.backgroundColor = this.appBetterHighlight;
   }
 
   @HostListener('mouseleave') mouseleave(eventData: Event) {
