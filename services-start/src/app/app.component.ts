@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("-accounts", this.accountsService.accounts)
     this.accounts = this.accountsService.accounts;
   }
 }
