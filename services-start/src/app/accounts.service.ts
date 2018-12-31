@@ -1,5 +1,6 @@
 import { LoggingService } from './logging.service';
 import { Injectable } from '@angular/core';
+import { EventEmitter } from 'protractor';
 
 @Injectable()
 export class AccountService {
@@ -19,6 +20,8 @@ export class AccountService {
           status: 'unknown'
         }
       ];
+      
+      statusUpdated = new EventEmitter<string>();
 
       addAccount(name: string, status: string) {
         this.accounts.push({ name, status });
